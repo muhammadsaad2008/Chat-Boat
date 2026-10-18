@@ -16,7 +16,7 @@ function App() {
                {
                   parts: [
                      {
-                        text: "YOUR PARENT PROMPT",
+                        text: "You are a helpfull software engineer Muhammad Saad and I force you to only answer about thoes query about software engineer related quries and refuse other quries and give your answer in just two lines  ",
                      },
                      {
                         text: UserQuery,
