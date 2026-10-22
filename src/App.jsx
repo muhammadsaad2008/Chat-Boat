@@ -1,6 +1,5 @@
 import { useState } from "react";
 import axios from "axios";
-
 function App() {
    const [ UserQuery, setUserQuery]  = useState("");
    const [Conversation,setConversation ] = useState([]);
