@@ -37,22 +37,26 @@ function App() {
       setUserQuery("");
    }
    return (
-      <div>
+      <div className='min-h-screen bg-gradient-to-br from-gray-900 via-slate-950 to-amber-950 px-4 py-8 text-white sm:px-8 flex flex-col items-center justify-center'>
          <div>
+            <h1 className="bg-gradient-to-r from-blue-400 via-purple-400 to-amber-300 bg-clip-text text-center  text-3xl font-bold text-transparent sm:text-4xl ">
+               Muhammad Saad's AI Chatbot
+            </h1>
             {Conversation?.map((msg, index) => (
                <div key={index} className={msg.role === "user" ? "user-message" : "assistant-message"}>
                   <strong>{msg.role === "user" ? "You" : "Assistant"}: {msg.message}</strong>
                </div>
             ))}
          </div>
-         <form onSubmit={handlesumbit}>
+         <form onSubmit={handlesumbit} className='mt-8 flex w-full max-w-2xl flex-col gap-3 rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur-lg sm:flex-row ' >
             <input type="text"
                name="UserQuery"
                id="UserQuery"
                value={UserQuery}
                onChange={(e) => setUserQuery(e.target.value)}
-               placeholder="Type Message" />
-            <button type="submit">Sumbit</button>
+               placeholder="Type Message" 
+               className=" min-w-0 flex-1 rounded-xl border border-white/10 bg-slate-900/80 px-4 py-3 text-white outline-none transition placeholder:text-stone-500 focus:border-purple-400"/>
+            <button type="submit" className="rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-3 font-semibold text-white transition hover:from-blue-500 hover:to-purple-500 disabled:cursor-not-allowed disabled:opacity-50">Sumbit</button>
          </form>
       </div>
    )
